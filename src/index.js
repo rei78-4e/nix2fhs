@@ -1,4 +1,3 @@
-// nix固有のプレフィックス + 残りのパス
 const NIX_PATH = new RegExp(
   "(?:/nix/store/[0-9a-z]{32}-[^/\\s]+" + // /nix/store/<hash>-<name>
     "|/etc/profiles/per-user/[^/\\s]+" + // home-manager (NixOS module)
