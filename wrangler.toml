@@ -1,0 +1,7 @@
+name = "nix2fhs"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+routes = [
+  { pattern = "n2f.rei78.cc", custom_domain = true }
+]
