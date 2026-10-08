@@ -72,6 +72,14 @@ npm に公開済みの場合は `npx nix2fhs ...` で実行できます。変換
 | 405 | GET / POST 以外のメソッド |
 | 415 | POST で `Content-Type` が `text/plain` でない |
 
+## テスト
+
+```sh
+npm test
+```
+
+依存パッケージは不要です（Node.js 組み込みの `node:test` を使用）。
+
 ## デプロイ
 
 ```sh
