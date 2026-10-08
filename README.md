@@ -40,6 +40,17 @@ ldd "$(which bash)" | ./n2f                                            # POST（
 
 接続先は環境変数 `N2F_URL` で変更できます（デフォルト: `https://n2f.rei78.cc`）。
 
+### ローカル実行（npx）
+
+API を使わず、手元の Node.js（18 以上）で変換します。
+
+```sh
+npx github:rei78-4e/nix2fhs /nix/store/abcdefghijklmnopqrstuvwxyz012345-bash-5.2/bin/bash
+ldd "$(which bash)" | npx github:rei78-4e/nix2fhs
+```
+
+npm に公開済みの場合は `npx nix2fhs ...` で実行できます。変換ロジックは `src/fhs.js` にあり、Worker と CLI で共有しています。
+
 ## 変換ルール
 
 | 入力 | 出力 |

@@ -1,0 +1,16 @@
+{
+  "name": "nix2fhs",
+  "version": "0.1.0",
+  "description": "Rewrite Nix store/profile paths to FHS paths",
+  "type": "module",
+  "bin": {
+    "nix2fhs": "bin/nix2fhs.js"
+  },
+  "files": [
+    "bin/",
+    "src/fhs.js"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
