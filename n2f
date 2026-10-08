@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Usage: n2f <path>...   or   <command> | n2f
+set -euo pipefail
+
+N2F_URL="${N2F_URL:-https://n2f.rei78.cc}"
+
+if [ $# -gt 0 ]; then
+  for p in "$@"; do
+    curl -fsS -G "$N2F_URL" --data-urlencode "p=$p"
+  done
+elif [ ! -t 0 ]; then
+  curl -fsS -X POST "$N2F_URL" -H 'Content-Type: text/plain' --data-binary @-
+else
+  echo "usage: n2f <path>...  |  <command> | n2f" >&2
+  exit 2
+fi

@@ -31,6 +31,15 @@ curl -X POST https://n2f.rei78.cc -H 'Content-Type: text/plain' --data-binary @e
 ldd "$(which bash)" | curl -X POST https://n2f.rei78.cc -H 'Content-Type: text/plain' --data-binary @-
 ```
 
+### ラッパースクリプト `n2f`
+
+```sh
+./n2f /nix/store/abcdefghijklmnopqrstuvwxyz012345-bash-5.2/bin/bash   # GET（引数ごと）
+ldd "$(which bash)" | ./n2f                                            # POST（stdin）
+```
+
+接続先は環境変数 `N2F_URL` で変更できます（デフォルト: `https://n2f.rei78.cc`）。
+
 ## 変換ルール
 
 | 入力 | 出力 |
