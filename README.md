@@ -49,7 +49,17 @@ npx github:rei78-4e/nix2fhs /nix/store/abcdefghijklmnopqrstuvwxyz012345-bash-5.2
 ldd "$(which bash)" | npx github:rei78-4e/nix2fhs
 ```
 
-npm に公開済みの場合は `npx nix2fhs ...` で実行できます。変換ロジックは `src/fhs.js` にあり、Worker と CLI で共有しています。
+変換ロジックは `src/fhs.js` にあり、Worker と CLI で共有しています。
+
+### ローカル実行（nix run）
+
+```sh
+nix run github:rei78-4e/nix2fhs -- /nix/store/abcdefghijklmnopqrstuvwxyz012345-bash-5.2/bin/bash
+ldd "$(which bash)" | nix run github:rei78-4e/nix2fhs
+
+# 常用する場合
+nix profile install github:rei78-4e/nix2fhs
+```
 
 ## 変換ルール
 
